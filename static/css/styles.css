@@ -1,0 +1,100 @@
+/* Grundläggande stilar för body och container */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f0f0f0, #e0e7ff);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+}
+
+/* Rubriker och texter */
+.header h1 {
+    font-size: 2.5rem;
+    color: #343a40;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+/* Formulär och uppladdning */
+#fileInput {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #343a40;
+    width: 100%;
+}
+
+button {
+    padding: 12px 35px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Bildförhandsvisning */
+.preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 20px 0;
+    display: none;
+    border-radius: 10px;
+    border: 2px solid #007bff;
+}
+
+/* Spinner och meddelande under bearbetning */
+.spinner {
+    display: none;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-message {
+    font-size: 1.2rem;
+    color: #343a40;
+    margin-top: 20px;
+    display: none;
+}

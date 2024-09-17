@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Remove Background</h1>
+            <p>Upload an image, and we'll handle the rest with precision.</p>
+        </header>
+        
+        <section id="content">
+            <!-- Spinner som visas under bearbetning -->
+            <div class="spinner" id="loading-spinner"></div>
+
+            <!-- Formulär för att ladda upp bild -->
+            <form id="imageForm" action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" id="fileInput" required aria-label="Upload image">
+                <img id="previewImage" class="preview-image" alt="Image Preview">
+                <button type="submit" id="uploadButton">Upload & Process</button>
+            </form>
+
+            <!-- Meddelande under bakgrundsborttagning -->
+            <p id="loadingMessage" class="loading-message">Removing background, please wait...</p>
+        </section>
+    </main>
+
+    <!-- Länka till externt JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
